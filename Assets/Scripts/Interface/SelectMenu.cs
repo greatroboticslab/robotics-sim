@@ -24,11 +24,13 @@ public class SelectMenu : MonoBehaviour
         	float m = Mathf.PI*2;
         	float theta = m/(robotPrefabs.Count);
         	theta *= i+1;
-        	Vector3 newPos = new Vector3(Mathf.Sin(theta),0,Mathf.Cos(theta));
+        	Vector3 newPos = new Vector3(Mathf.Sin(theta)*radius,0,Mathf.Cos(theta)*radius);
         	GameObject newRobot = Instantiate(robotPrefabs[i]);
         	newRobot.transform.position = newPos;
         	robots.Add(newRobot);
         }
+		Debug.Log(robotPrefabs[0]);
+		
     }
 
     // Update is called once per frame
